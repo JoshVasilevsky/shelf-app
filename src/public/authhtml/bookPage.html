@@ -1,0 +1,135 @@
+<html>
+
+<head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/NavBarStyle.css" />
+    <script src="../javascript/auth.js"></script>
+    <title>Shelf</title> <!-- Change this depedning on which book you are looking at-->
+</head>
+
+
+<body onload="getBook()">
+    <!--Top bar Start-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm p-3 mb-5" style="background-color: #335482" ;>
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="../resources/logo.png" width="105" height="48" class="d-inline-block align-top" alt="Shelf">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link lead" href="/auth/homefeed.html">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link lead" href="javascript:" onclick="handleNavBookList()">
+                            <i class="fas fa-list"></i>
+                            My Books
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link lead" href="javascript:" onclick="handleNavFriends()">
+                            <i class="fas fa-user-friends"></i>
+                            My Friends
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link lead" href="javascript:" onclick="handleNavProfile()">
+                            <i class="fas fa-user"></i>
+                            Profile
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link lead" href="javascript:" onclick="handleNavSignout()">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Sign Out
+                        </a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0" action="/auth/search-results.html">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="searchbar" name="q" placeholder="Search...">
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary" type="Submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!--Top bar End-->
+
+    <div class="container pt-4">
+        <div class="container shadow p-3 my-5 bg-white" id="bookcontent" style="background-color: white;">
+
+        </div>
+        <div class="container shadow p-3 my-5 bg-white" id="bookreviews" style="background-color: white;">
+            <h3>Reviews</h3>
+            <hr />
+            <div class="mx-5">
+                <div class=container>
+                    <div class="row px-5 d-flex justify-content-center">
+                        <div class="col-6" >
+                            <div class="alert alert-danger text-center" id="validateInput" role="alert" style="display:none;"></div>
+                        </div>
+                    </div>
+                    <div class="form-group border-focus row">
+                        <label class="col-form-label" id="rating_label" for="review">Rating</label>
+                        <div class="ml-2 mb-3">
+                            <select class="form-control" id="rating">
+                                <option value="0">0 Stars</option>
+                                <option value="0.5">0.5 Stars</option>
+                                <option value="1.0">1.0 Stars</option>
+                                <option value="1.5">1.5 Stars</option>
+                                <option value="2.0">2.0 Stars</option>
+                                <option value="2.5">2.5 Stars</option>
+                                <option value="3.0">3.0 Stars</option>
+                                <option value="3.5">3.5 Stars</option>
+                                <option value="4.0">4.0 Stars</option>
+                                <option value="4.5">4.5 Stars</option>
+                                <option value="5.0">5.0 Stars</option>
+                            </select>
+                        </div>
+                    
+                        <textarea type="text" class="form-control" id="review" style="resize:none;" rows="4"></textarea>
+                        <div class="d-flex flex-row-reverse">
+                            <button type="button" class="btn mt-3 text-white" style="background-color: #335482;" onclick="postReview()">Make a Post</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            
+        </div>
+        <div id="bookcomments">
+
+        </div>
+    </div>
+
+    <!--Footer Start-->
+    <footer class="py-5" style="background-color: #335482" ;>
+        <div class="container">
+            <p class="m-0 text-center text-white lead">Copyright &copy; Sigma 2020</p>
+        </div>
+    </footer>
+    <!--Footer End-->
+    <!--Our JavaScript Start -->
+    <script src="../javascript/bookPage-xhr.js"></script>
+    <script src="../javascript/NavRedirect.js"></script>
+    <!--Our JavaScript End-->
+    <!--Booststrap JS files-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+
+</html>

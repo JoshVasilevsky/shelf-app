@@ -1,0 +1,148 @@
+﻿﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/NavBarStyle.css" />
+    <script src="../javascript/auth.js"></script>
+    <title>Shelf</title>
+</head>
+<body onload="loadBooks()">
+
+    <!--Top bar Start-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm p-3 mb-5" style="background-color: #335482" ;>
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="../resources/logo.png" width="105" height="48" class="d-inline-block align-top" alt="Shelf">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link lead" href="/auth/homefeed.html">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link lead" href="javascript:" onclick="handleNavBookList()">
+                            <i class="fas fa-list"></i>
+                            My Books
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link lead" href="javascript:" onclick="handleNavFriends()">
+                            <i class="fas fa-user-friends"></i>
+                            My Friends
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link lead" href="javascript:" onclick="handleNavProfile()">
+                            <i class="fas fa-user"></i>
+                            Profile
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link lead" href="javascript:" onclick="handleNavSignout()">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Sign Out
+                        </a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0" action="/auth/search-results.html">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="searchbar" name="q" placeholder="Search...">
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary" type="Submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!--Top bar End-->
+    <!--Page Content Start-->
+
+    <div class="container shadow-sm p-3 my-5 bg-white" style="background-color: white">
+        <!--User Name-->
+        <h3 id="username" class="mb-3"></h3>
+        <!--Tabs-->
+        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="wishlist-tab" data-toggle="tab" href="#wishlist" role="tab" aria-controls="wishlist" aria-selected="true">Want to Read</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="reading-tab" data-toggle="tab" href="#reading" role="tab" aria-controls="reading" aria-selected="false">Currently Reading</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="finished-tab" data-toggle="tab" href="#finished" role="tab" aria-controls="finished" aria-selected="false">Finished Reading</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="dropped-tab" data-toggle="tab" href="#dropped" role="tab" aria-controls="dropped" aria-selected="false">Dropped</a>
+            </li>
+        </ul>
+        <!--Static Tab Content-->
+        <div class="tab-content" id="myTabContent">
+           
+            <!--First Tab Content-->
+            <div class="tab-pane fade show active" id="wishlist" role="tabpanel" j aria-labelledby="wishlist-tab">
+                <div class="table-responsive">
+                    <table class="table" id="wishlist_table">
+                        
+                    </table>
+                </div>
+            </div>
+            <!--Second Tab Content-->
+            <div class="tab-pane fade" id="reading" role="tabpanel" aria-labelledby="reading-tab">
+                <div class="table-responsive">
+                    <table class="table" id="reading_table">
+                       
+                    </table>
+                </div>
+            </div>
+            <!--Third Tab Content-->
+            <div class="tab-pane fade" id="finished" role="tabpanel" aria-labelledby="finished-tab">
+                <div class="table-responsive">
+                    <table class="table" id="finished_table">
+                      
+                    </table>
+                </div>
+            </div>
+            <!--Four Tab Content-->
+            <div class="tab-pane fade" id="dropped" role="tabpanel" aria-labelledby="dropped-tab">
+                <div class="table-responsive">
+                    <table class="table" id="dropped_table">
+                       
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!--Page Content End-->
+    <!--Page Content End-->
+    <!--Footer Start-->
+    <footer class="py-5" style="background-color: #335482" ;>
+        <div class="container">
+            <p class="m-0 text-center text-white lead">Copyright &copy; Sigma 2020</p>
+        </div>
+    </footer>
+    <!--Footer End-->
+    <!--Our JavaScript Start -->
+    <script src="../javascript/booklist-xhr.js"></script>
+    <script src="../javascript/NavRedirect.js"></script>
+    <!--Our JavaScript End-->
+    <!--Booststrap JS files-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
