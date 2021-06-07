@@ -3,7 +3,7 @@
 ## Team Sigma
 ### Application: 
 #### Shelf
-Link: **[Access via Heroku](https://shelf-book-app.herokuapp.com/)**\
+Link: **[Access via Heroku](https://shelf-book-app.herokuapp.com/)**
 
 ### Spring 2020
 
@@ -23,80 +23,80 @@ Our proposed application is a website which allows a user to sign up and store b
 ### Index
 Home page for the site. Includes a short description about the purpose of the site.
 
-![alt text](https://github.com/JoshVasilevsky/shelf-app/tree/master/docs/pictures/ui-final/index.PNG)
+![alt text](./docs/pictures/ui-final/index.PNG)
 
 ### Sign in
 Sign in page, where user enters their credentials to gain access to the site.
 
-![alt text](https://github.com/JoshVasilevsky/shelf-app/tree/master/docs/pictures/ui-final/sign_in.PNG)
+![alt text](./docs/pictures/ui-final/sign_in.PNG)
 
 ### Sign up
 Sign up page, where the user can register credentials to use the site.
 
-![alt text](https://github.com/JoshVasilevsky/shelf-app/tree/master/docs/pictures/ui-final/sign_up.PNG)
+![alt text](./docs/pictures/ui-final/sign_up.PNG)
 
 ### Profile
 Profile for signed in user, which allows user to change personal details/preferences, as well as access their friends list and book lists. Users are able to view other users profile pages as well where they can add them as a friend.
 
 #### Profile Page of Current logged in User
-![alt text](https://github.com/JoshVasilevsky/shelf-app/tree/master/docs/pictures/ui-final/profile_currentuser.png)
+![alt text](./docs/pictures/ui-final/profile_currentuser.png)
 
 #### Profile Page when viewing other user
-![alt text](https://github.com/JoshVasilevsky/shelf-app/tree/master/docs/pictures/ui-final/profile_otheruser.png)
+![alt text](./docs/pictures/ui-final/profile_otheruser.png)
 
 ### Search
 Search page where users can look through results based on their query. This is how users search for books and profiles.
 
 #### Search Results for book
-![alt text](https://github.com/JoshVasilevsky/shelf-app/tree/master/docs/pictures/ui-final/searchresults_book.png)
+![alt text](./docs/pictures/ui-final/searchresults_book.png)
 
 #### Search Results for user
-![alt text](https://github.com/JoshVasilevsky/shelf-app/tree/master/docs/pictures/ui-final/searchresults_user.png)
+![alt text](./docs/pictures/ui-final/searchresults_user.png)
 
 #### Search Results not found
-![alt text](https://github.com/JoshVasilevsky/shelf-app/tree/master/docs/pictures/ui-final/searchresults_empty.png)
+![alt text](./docs/pictures/ui-final/searchresults_empty.png)
 
 ### Book Page
 Page that gives details about the currently selected book including the ability to post ratings and reviews.
 
 #### Book Info
-![alt text](https://github.com/JoshVasilevsky/shelf-app/tree/master/docs/pictures/ui-final/bookpage.png)
+![alt text](./docs/pictures/ui-final/bookpage.png)
 
 #### Book Review
-![alt text](https://github.com/JoshVasilevsky/shelf-app/tree/master/docs/pictures/ui-final/bookpage_review.png)
+![alt text](./docs/pictures/ui-final/bookpage_review.png)
 
 ### Book Lists
 Page that shows all four of the user's lists, as well as what books are on them. Lists can be edited here too.
 
 #### BookList with books
-![alt text](https://github.com/JoshVasilevsky/shelf-app/tree/master/docs/pictures/ui-final/booklist.png)
+![alt text](./docs/pictures/ui-final/booklist.png)
 
 #### BookList Empty
-![alt text](https://github.com/JoshVasilevsky/shelf-app/tree/master/docs/pictures/ui-final/booklist_empty.png)
+![alt text](./docs/pictures/ui-final/booklist_empty.png)
 
 ### Friends List
 Page that shows all of the current user's friends, and their information. Users accept/reject friend requests here and delete current friends.
 
 #### Friendlist friends
-![alt text](https://github.com/JoshVasilevsky/shelf-app/tree/master/docs/pictures/ui-final/friends_friend.png)
+![alt text](./docs/pictures/ui-final/friends_friend.png)
 
 #### Friendlist Requests
-![alt text](https://github.com/JoshVasilevsky/shelf-app/tree/master/docs/pictures/ui-final/friends_request.png)
+![alt text](./docs/pictures/ui-final/friends_request.png)
 
 #### Friendlist pending
-![alt text](https://github.com/JoshVasilevsky/shelf-app/tree/master/docs/pictures/ui-final/friends_pending.png)
+![alt text](./docs/pictures/ui-final/friends_pending.png)
 
 #### Friendlist empty
-![alt text](https://github.com/JoshVasilevsky/shelf-app/tree/master/docs/pictures/ui-final/friends_empty.png)
+![alt text](./docs/pictures/ui-final/friends_empty.png)
 
 ### Home Feed
 Home Feed for signed in user, which contains post updates and comments on those posts
 
 #### Home feed
-![alt text](https://github.com/JoshVasilevsky/shelf-app/tree/master/docs/pictures/ui-final/feed.png)
+![alt text](./docs/pictures/ui-final/feed.png)
 
 #### Home feed empty
-![alt text](https://github.com/JoshVasilevsky/shelf-app/tree/master/docs/pictures/ui-final/feed_empty.png)
+![alt text](./docs/pictures/ui-final/feed_empty.png)
 
 
 ## APIs
